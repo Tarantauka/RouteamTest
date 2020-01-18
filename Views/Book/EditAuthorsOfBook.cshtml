@@ -1,0 +1,26 @@
+﻿@model List<AuthorBookVM>
+@{
+    ViewData["Title"] = "EditAuthorsOfBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>EditAuthorsOfBook</h1>
+<form method="post" asp-action="EditAuthorsOfBook" asp-controller="Book">
+    <!--Начало formgroup "Выбор страны изготовителя"-->
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="form-check m-1">
+            <input type="hidden" asp-for="@Model[i].AuthorId" />
+            <input type="hidden" asp-for="@Model[i].AuthorFullName" />
+            <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+            <label class="form-check-label" asp-for="@Model[i].IsSelected">
+                @Model[i].AuthorFullName
+            </label>
+        </div>
+    }
+    <input type="submit" value="Обновить" class="btn btn-primary"
+           style="width:auto" />
+    <a asp-action="List"
+       class="btn btn-primary" style="width:auto">Отмена</a>
+    <!--Конец-->
+</form>

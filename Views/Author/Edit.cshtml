@@ -1,0 +1,53 @@
+﻿@model Author
+
+@{
+    ViewData["Title"] = "EditUnit";
+}
+
+<h1>EditUnit</h1>
+
+<form method="post" class="mt-3">
+    <!--Начало formgroup "идентификатор"-->
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label">Идентификатор</label>
+        <div class="col-sm-10">
+            <input type="number" asp-for="Id" class="form-control" placeholder="идентификатор" disabled />
+        </div>
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "название страен"-->
+    <div class="form-group row">
+        <label asp-for="Name" class="col-sm-2 col-form-label">Имя автора</label>
+        <div class="col-sm-10">
+            <input type="text" asp-for="Name" class="form-control" placeholder="название" />
+        </div>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "название страен"-->
+    <div class="form-group row">
+        <label asp-for="SurName" class="col-sm-2 col-form-label">Фамилия автора</label>
+        <div class="col-sm-10">
+            <input type="text" asp-for="SurName" class="form-control" placeholder="название" />
+        </div>
+        <span asp-validation-for="SurName" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "название страен"-->
+    <div class="form-group row">
+        <label asp-for="Patronymic" class="col-sm-2 col-form-label">Отчество автора</label>
+        <div class="col-sm-10">
+            <input type="text" asp-for="Patronymic" class="form-control" placeholder="название" />
+        </div>
+        <span asp-validation-for="Patronymic" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Обновить</button>
+            <a asp-action="List" class="btn btn-primary">Отмена</a>
+        </div>
+    </div>
+</form>

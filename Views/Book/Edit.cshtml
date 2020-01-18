@@ -1,0 +1,36 @@
+﻿@model Book
+
+<h1>Create</h1>
+
+
+
+<form method="post" asp-action="Edit" asp-controller="Book">
+    <!--Начало formgroup "идентификатор"-->
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label">Идентификатор</label>
+        <div class="col-sm-10">
+            <input type="number" asp-for="Id" class="form-control" placeholder="идентификатор" disabled />
+        </div>
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "Имя"-->
+    <div class="form-group">
+        <label asp-for="Name" for="name" class="control-label">Введите имя</label>
+        <input type="text" asp-for="Name" name="name" class="form-control" placeholder="имя" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "Фамилия"-->
+    <div class="form-group">
+        <label asp-for="Genre" for="genre" class="control-label">Введите фамилию</label>
+        <input type="text" asp-for="Genre" name="genre" class="form-control" placeholder="фамилия" />
+        <span asp-validation-for="Genre" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "Кнопки подтверждения"-->
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-success" />
+    </div>
+    <!--Конец-->
+</form>

@@ -1,0 +1,20 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>List</h1>
+
+@foreach (var item in Model)
+{
+    <div class="form-inline">
+        <div>@item.Name , @item.Genre</div>
+        @foreach (var ba in item.BookAuthor)
+        {
+            <a>@ba.Author.Name @ba.Author.SurName @ba.Author.Patronymic </a>
+        }
+    </div>
+    <a asp-action="EditAuthorsOfBook" asp-controller="Book" asp-route-id="@item.Id" style="width:auto" class="btn btn-primary">Изменить автора</a>
+
+}

@@ -1,0 +1,34 @@
+﻿@model Author
+
+<h1>Create</h1>
+
+
+
+<form method="post" asp-action="Create" asp-controller="Author">
+    <!--Начало formgroup "Имя"-->
+    <div class="form-group">
+        <label asp-for="Name" for="name" class="control-label">Введите имя</label>
+        <input type="text" asp-for="Name" name="name" class="form-control" placeholder="имя" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "Фамилия"-->
+    <div class="form-group">
+        <label asp-for="SurName" for="surName" class="control-label">Введите фамилию</label>
+        <input type="text" asp-for="SurName" name="surName" class="form-control" placeholder="фамилия" />
+        <span asp-validation-for="SurName" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "Отчество"-->
+    <div class="form-group">
+        <label asp-for="Patronymic" for="patronymic" class="control-label">Введите отчество</label>
+        <input type="text" asp-for="Patronymic" name="patronymic" class="form-control" placeholder="НАЗВАНИЕ" />
+        <span asp-validation-for="Patronymic" class="text-danger"></span>
+    </div>
+    <!--Конец-->
+    <!--Начало formgroup "Кнопки подтверждения"-->
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-success" />
+    </div>
+    <!--Конец-->
+</form>

@@ -1,0 +1,41 @@
+﻿@model List<Author>
+@{
+    ViewData["Title"] = "Список авторов";
+}
+
+<h1>Список авторов</h1>
+
+@if (Model.Any())
+{
+    <a asp-controller="Author" asp-action="Create" style="width:auto" class="btn btn-primary mb-3"> Создать пользоваеля</a>
+    foreach (var author in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                Идентификатор : @author.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@author.Name, @author.SurName, @author.Patronymic</h5>
+            </div>
+            <div class="card-footer">
+                <form method="post" asp-action="Delete" asp-route-id="@author.Id">
+                    <a asp-controller="Author" asp-action="Edit" asp-route-Id="@author.Id" style="width:auto" class="btn btn-primary"> Изменить</a>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    }
+
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            Нет авторов
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Нажми на кнопку ниже чобы создать нового автора</h5>
+            <a asp-controller="Author" asp-action="Create" style="width:auto" class="btn btn-primary"> Создать автора</a>
+        </div>
+    </div>
+}

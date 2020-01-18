@@ -1,0 +1,14 @@
+﻿@model List<CountAuthorBooksVM>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>List</h1>
+
+@foreach (var item in Model)
+{
+    <div class="form-inline">
+        <div>@item.Name , @item.SurName, @item.Patronymic имеет количество книг равное - @item.BookCount</div>
+    </div>
+}
